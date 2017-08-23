@@ -1,0 +1,16 @@
+body {
+  background-image: url(https://cdn.thinglink.me/api/image/758777110864068608/1240/10/scaletowidth);
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  background-size: 80%;
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 300px;
+}
+
+.container {
+  background-color: rgba(218, 247, 166, 0.80);
+  color: #1B4F72;
+  background-size: 80%;
+}

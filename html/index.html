@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/scripts.js"></script>
+    <title>Asgard</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <img src="../img/norse.jpeg" alt="the nine worlds"> -->
+      <h1>Asgard</h1>
+      <h2>You’re a young, capable human trying to attain their God status. You must make it through the 9 worlds to attain your God status in Asgard. Each world will pose a unique threat. The creatures of each world have lessons to teach you. Be careful, you’re not immortal yet; your lives are listed in the corner.</h2>
+      <h3>First, select the God you worship. Each will give you certain abilities.</h3>
+      <form>
+        <div class="radio">
+          <label>
+            <input type="radio" name="god" value="sif">
+            Sif, skips the light elves - pick this character if logic doesn’t come easy to you
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="line" value="odin">
+              skips the password or word puzzle level - pick this character if you want to skip the word puzzle
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="line" value="frigg">
+              Goddess of fertility - pick this and get an extra life
+          </label>
+        </div>
+        <button id="godSubmit" type="submit" class="btn">Choose God</button>
+      </form>
+
+      <div id="beginNext">
+        <button type="button">Begin</button>
+      </div>
+
+    </div>
+  </body>
+</html>
