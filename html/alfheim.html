@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>You’re on Alfheim, the world of elves. The elves are a tricky bunch, and they sure do love their riddles. Click the wrong answer, and you’ll lose a life. You can fill in this chart with Xs and Os to help you.</h3>
+<div id="svartalfheimNextDiv"><a href="svartalfheim.html">Next</a></div>
+<p>Friya, Balder, and Tyr each have a weapon. The weapons are Sword, dagger and mallet. Each weapon is a unique color, red, gold and green. Figure out the color of the dagger.</p>
+<ul>
+<li>Friya’s weapon is not gold, nor does she have the mallet</li>
+<li>The mallet is green</li>
+<li>Balder has the dagger</li>
+</ul>
+<h5>What color is the dagger?</h5>
+<table>
+  <tr>
+    <th></th>
+    <th scope="col"> Friya </th>
+    <th scope="col"> Balder </th>
+    <th scope="col"> Tyr </th>
+    <th scope="col"> Sword </th>
+    <th scope="col"> Dagger </th>
+    <th scope="col"> Mallet </th>
+  </tr>
+  <tr>
+    <th scope="row"> Red </th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr>
+    <th scope="row"> Gold </th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr>
+    <th scope="row"> Green </th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr>
+    <th scope="row"> Sword </th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr>
+    <th scope="row"> Dagger </th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr>
+    <th scope="row"> Mallet </th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+</table>
+<form (ngSubmit)="alfheimSubmit()">
+  <input type="radio" name="color" value="red" id="red">Red<br>
+  <input type="radio" name="color" value="gold" id="gold">Gold<br>
+  <input type="radio" name="color" value="green" id="green">Green<br>
+  <button type="submit">Submit</button>
+</form>
+  </body>
+</html>
