@@ -1,9 +1,9 @@
-function Player(name, lives) {
-  this.name = name;
-  this.lives = 3;
-}
+//business logic
 
-var icons = require('glyphicons');
+function Player(god, lives) {
+  this.god = god;
+  this.lives = lives;
+}
 
 Player.prototype.showLives = function() {
   if (this.lives == 4) {
@@ -13,10 +13,16 @@ Player.prototype.showLives = function() {
   }
 }
 
-Player.prototype.subtractLife = function() {
-  this.lives -= 1;
-}
+//user interface
 
-Player.prototype.addLife = function() {
-  this.lives += 1;
-}
+$(document).ready(function() {
+  $("#godSubmit").click(function(event) {
+    var godName = $("input:radio[name=god]:checked").val();
+    event.preventDefault();
+    var player = new Player(godName, 3);
+    if (godName == "frigg") {
+      player.lives += 1;
+    }
+    $("#beginNext").show();
+  });
+});

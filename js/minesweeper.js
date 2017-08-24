@@ -10,7 +10,7 @@ var grid;
 var cols;
 var rows;
 var w = 80;
-var totalMines = 1;
+var totalMines = 5;
 var safeClicks = [];
 var totalLives = 5;
 

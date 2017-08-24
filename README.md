@@ -6,6 +6,7 @@
 * Sif, skips the light elves - pick this character if logic doesn’t come easy to you
 * Odin, skips Vanaheim - pick this character if you want to skip Passwords
 * Frigg, Goddess of fertility - pick this and get an extra life
+
 Lives: 3/3
 
 ## Hangman
