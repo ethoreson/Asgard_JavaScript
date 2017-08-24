@@ -28,7 +28,7 @@ Gods need to be up-to-date on pop culture. Fill in the blanks to popular song ly
 ## Passwords - (Enter passwords from previous levels)
 Your past will come back to haunt you on Vanaheim. The locals want to know more about your travels. You’ve been given secret passwords every step of the way. They appeared to you in ALL CAPS. Enter all five of them here to move on. Or go back to the beginning and try to remember from which you came.
 
-## minesweeper - EMILIE
+## minesweeper - EMILIE & MARA - done
 The giants of Jotunheim are often forgotten about. Their wasteland has seen many wars. They’re pleading for you to help them uncover the bombs, so they may lead safer lives.
 
 ## mastermind

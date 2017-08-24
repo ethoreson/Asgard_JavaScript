@@ -3,7 +3,10 @@
   <head>
     <link href="../css/styles.css" rel="stylesheet" type="text/css">
     <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/player.js"></script>
     <script src="../js/scripts.js"></script>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <style type="text/css"></style>
     <title>Asgard</title>
   </head>
   <body>
@@ -11,6 +14,12 @@
       <!-- <img src="../img/norse.jpeg" alt="the nine worlds"> -->
       <h1>Asgard</h1>
       <h2>You’re a young, capable human trying to attain their God status. You must make it through the 9 worlds to attain your God status in Asgard. Each world will pose a unique threat. The creatures of each world have lessons to teach you. Be careful, you’re not immortal yet; your lives are listed in the corner.</h2>
+      <div class="fourlives">
+        <img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png">
+      </div>
+      <div class="threelives">
+        <img src="../img/greenheart.png"><img src="../img/greenheart.png"><img src="../img/greenheart.png">
+      </div>
       <h3>First, select the God you worship. Each will give you certain abilities.</h3>
       <form>
         <div class="radio">
@@ -35,7 +44,9 @@
       </form>
 
       <div id="beginNext">
-        <div id="midgardNextDiv"><a href="midgard.html">Begin</a></div>
+        <h1 class="customfont"><div id="midgardNextDiv"><a href="midgard.html">Start</a></div></h1>
+        <p id="startEnglish">(Start)</p>
+        <!-- <div id="midgardNextDiv"><a href="midgard.html">Begin</a></div> -->
       </div>
 
     </div>

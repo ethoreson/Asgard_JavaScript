@@ -1,0 +1,22 @@
+.fourlives {
+  display: none;
+}
+
+.threelives {
+  display: none;
+}
+
+
+@@font-face {
+  font-family: "floki"
+  src: url("../fonts/floki/floki-Hard.ttf") format("truetype");
+}
+
+h1.customfont {
+  font-family: "floki", Veranda;
+  letter-spacing: 6px;
+}
+
+#startEnglish {
+  font-size: 16px;
+}
