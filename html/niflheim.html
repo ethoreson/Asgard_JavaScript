@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Journey to Asgard</title>
-  </head>
-  <body>
-<html>
-<head>
   <meta charset="UTF-8">
+  <script src="../js/jquery-3.2.1.js"></script>
+  <!-- <script src="../js/minesweeper.js"></script> -->
+  <script src="../js/cell.js"></script>
+  <link href="../css/jotunheim.css" rel="stylesheet" type="text/css"></script>
+  <title></title>
+</head>
+<body>
   <style>
     body { font-family: arial; font-size: 1.2em; background-color:#f7f7f7;}
     #board {
@@ -31,13 +32,19 @@
     .winner { background-color: lightgreen; }
     #status { font-size: 1.2em; font-weight: bold; }
   </style>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- <script src="../js/jquery-3.2.1.js"></script> -->
   <script>
     var computer = 'O'; // the computer is O
     var player = 'X'; // you are X
     var turn = player; // the player goes first
     var xwins = 0, owins = 0; // win tallies
 
+    /* =============================== */
+    /* GAME BOARD NAVIGATION FUNCTIONS */
+
+    // test each cell in each row with a function and return the index of
+    // the first whose values causes the function to return true;
+    // return -1 if no row returns true
     function iterateCols(func) {
       return findInGrid(true, func);
     }
@@ -87,7 +94,9 @@
     }
 
 
-//backend logic: 
+    /* =================== */
+    /* GAME PLAY FUNCTIONS */
+
     function init() {
       // register event handler for player turns
       $(document).ready(function() {
@@ -168,7 +177,7 @@
     // computer takes its turn
     function computerTurn() {
       var strategies = [];
-      if (option('random')) strategies.push(strategyRandom);
+      strategies.push(strategyRandom);
       for (var i=0; i<strategies.length; i++) {
         var turn = strategies[i]();
         if (!turn) continue;
@@ -238,10 +247,7 @@
       }
       return -1;
     }
-
-
     init();
-
   </script>
 </head>
 <body>
@@ -259,15 +265,8 @@
 </div>
 <p id="status"></p>
 <p>X wins: <span id="xwins">0</span><br/>
-Y wins: <span id="owins">0</span></p>
-<p><button onclick="newGame()">New Game</button></p>
-<p>
-  Strategies:<br/>
-  <label><input disabled type="checkbox" name="random" value="1" checked/> Random</label><br/>
-</p>
-</body>
-</html>
+O wins: <span id="owins">0</span></p>
 
-    <div id="muspelheimNextDiv"><a href="muspelheim.html">Next</a></div>
-  </body>
+<div id="muspelheimNextDiv"><a href="muspelheim.html">Next</a></div>
+</body>
 </html>
