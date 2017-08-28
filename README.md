@@ -19,7 +19,7 @@ You’re on Alfheim, the world of elves. The elves are a tricky bunch, and they 
 ## Blendoku
 You’ve made it to Svartalfheim, home of the dwarves. Before they let you leave, they’ve made a color puzzle for you. Solve it without any mistakes, and they’ll grant you an extra life!
 
-## Tic-tac-toe - Sowmya & Mara - almost done
+## Tic-tac-toe - Sowmya & Mara - almost done!!!
 You’re in Niflheim, the land of ice. Below are nine ice cubes, you need 3 in a line. Back on Midgard, you might know it better as tic-tac-toe…
 
 ## Guess the lyrics/Netflix title
