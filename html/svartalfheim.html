@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div id="niflheimNextDiv"><a href="niflheim.html">Next</a></div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <script rel="stylesheet" type="text/css" href="css/jquery-ui.css"></script>
+        <script src="../js/svartalfheim.js"></script>
+          <script src="../js/jquery-3.2.1.js"></script>
+        <link href="../css/svartalfheim.css" rel="stylesheet" type="text/css">
+
+        <title>Blendoku</title>
+        <style>
+            .draggable { width: 30px; height: 30px; padding: 10px; float: left; margin: 10px 10px 10px 0; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;  z-index:100;}
+            .droppable { width: 30px; height: 30px; padding: 10px; float: left; margin: 10px 10px 10px 0; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;  z-index:1;}
+        </style>
+
+        <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
+        <!-- <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script> -->
+
+      </head>
+      <body>
+        <p> Drag and drop the element into the grey boxes</p><br>
+      <div style="display:block; position:relative; top:0px; width:480px; height:200px; background:skyblue; "></div>
+
+      <div style="display:block; position:absolute; top:100px; left:80px;">
+          <div id="drag1" class="ui-widget-header draggable" draggable = "true" ondragstart="drag(event)" style="background:#FF3EFF;"></div>
+          <div id="drag2" class="ui-widget-header draggable" draggable = "true" ondragstart="drag(event)" style="background:#990099;"></div>
+          <div id="drag3" class="ui-widget-header draggable" draggable = "true" ondragstart="drag(event)" style="background:#FF77FF"></div>
+          <div id="drag4" class="ui-widget-header draggable" draggable = "true" ondragstart="drag(event)" style="background:#CC00CC;"></div>
+      </div>
+
+      <div id="success_text" style="display:block; position:absolute; top:100px; left:80px;"></div>
+
+      <div style="display:block; position:absolute; top:180px; left:80px;">
+          <div class="ui-widget-header droppable" style="background:#FFB3FF"></div>
+          <div id="div1" class="ui-widget-header droppable" ondrop="drop(event)" ondragover="allowDrop(event)" style="background:grey;"></div>
+          <div id="div2" class="ui-widget-header droppable" ondrop="drop(event)" ondragover="allowDrop(event)" style="background:grey;"></div>
+          <div id="div3" class="ui-widget-header droppable" ondrop="drop(event)" ondragover="allowDrop(event)" style="background:grey;"></div>
+          <div id="div4" class="ui-widget-header droppable" ondrop="drop(event)" ondragover="allowDrop(event)" style="background:grey;"></div>
+      </div>
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <br>
+
+    </body>
 </html>

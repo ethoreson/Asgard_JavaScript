@@ -213,14 +213,21 @@
       else if (p=='O') owins++;
       $("#xwins").text(xwins);
       $("#owins").text(owins);
-    }
 
-    // new game
-    function newGame() {
-      $("#board div").find("span").remove();
-      $(".winner").removeClass("winner");
-      turn = player;
-      $("#status").empty();
+      //if player wins
+      if (p=='X') {
+        alert("You won");
+        $("#muspelheimNextDiv").show();
+      }
+
+      //if players loses or ties
+      if (p!='X') {
+        alert("You did not win. Play again.");
+        $("#board div").find("span").remove();
+        $(".winner").removeClass("winner");
+        turn = player;
+        $("#status").empty();
+      }
     }
 
     /* ================= */
@@ -247,26 +254,32 @@
       }
       return -1;
     }
+
+    // function gameWon() {
+    //   alert("You won");
+    //   $("#muspelheimNextDiv").show();
+    // }
+
     init();
+
   </script>
 </head>
-<body>
-<h1>Tic Tac Toe</h1>
-<div id="board">
-  <div id="s00"></div>
-  <div id="s10"></div>
-  <div id="s20"></div>
-  <div id="s01"></div>
-  <div id="s11"></div>
-  <div id="s21"></div>
-  <div id="s02"></div>
-  <div id="s12"></div>
-  <div id="s22"></div>
-</div>
-<p id="status"></p>
-<p>X wins: <span id="xwins">0</span><br/>
-O wins: <span id="owins">0</span></p>
-
-<div id="muspelheimNextDiv"><a href="muspelheim.html">Next</a></div>
-</body>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <div id="board">
+      <div id="s00"></div>
+      <div id="s10"></div>
+      <div id="s20"></div>
+      <div id="s01"></div>
+      <div id="s11"></div>
+      <div id="s21"></div>
+      <div id="s02"></div>
+      <div id="s12"></div>
+      <div id="s22"></div>
+    </div>
+    <p id="status"></p>
+    <p>X wins: <span id="xwins">0</span><br/>
+    O wins: <span id="owins">0</span></p>
+    <div id="muspelheimNextDiv"><a href="muspelheim.html">Next</a></div>
+  </body>
 </html>
