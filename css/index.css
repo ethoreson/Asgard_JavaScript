@@ -1,3 +1,22 @@
+body {
+  background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1899687.jpg);
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  background-size: 80%;
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 100px;
+}
+
+.container {
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: rgba(218, 247, 166, 0.80);
+  color: #1B4F72;
+  background-size: 80%;
+}
+
 #beginNext {
   display: none;
 }

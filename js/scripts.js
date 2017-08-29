@@ -28,6 +28,7 @@ $(document).ready(function() {
       player.levelsCompleted.push("Vanaheim");
       $(".threelives").show();
     }
+    $(".pickAGod").hide();
     $("#beginNext").show();
   });
 

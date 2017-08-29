@@ -5,11 +5,7 @@
 * brew install node
 * npm install -g bower
 * brew install watchman
-* npm install -g ember-cli
-* ember new asgard-ember
-* cd asgard-ember
-* ember server
-* (go to localhost:4200)
+
 
 ### Storyline
 "You’re a young, capable human trying to become a God. You must make it through the 9 worlds to attain your God status in Asgard. Each world will pose a unique threat. The creatures of each world have lessons to teach you. Be careful, you’re not immortal yet; your lives are listed in the corner."

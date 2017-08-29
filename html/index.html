@@ -5,8 +5,8 @@
     <script src="../js/jquery-3.2.1.js"></script>
     <script src="../js/scripts.js"></script>
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../css/progress.css" rel="stylesheet" type="text/css">
     <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/progress.css" rel="stylesheet" type="text/css">
     <style type="text/css"></style>
     <title>Journey to Asgard</title>
   </head>
@@ -21,29 +21,30 @@
     <div class="container">
       <h1>Journey to Asgard</h1>
       <h2>You’re a young, capable human trying to attain their God status. You must make it through the 9 worlds to attain your God status in Asgard. Each world will pose a unique threat. The creatures of each world have lessons to teach you. Be careful, you’re not immortal yet; your lives are listed in the corner.</h2>
-      <h3>First, select the God you worship. Each will give you certain abilities.</h3>
-      <form id="godSubmit">
-        <div class="radio">
-          <label>
-            <input type="radio" name="god" value="sif">
-            Sif: skips Vanaheim - pick this character if pop culture doesn't come easy to you
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="god" value="odin">
-              Odin: skips Muspelheim - pick this character if logic doesn’t come easy to you
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="god" value="frigg">
-              Frigg: Goddess of fertility - pick this and get an extra life
-          </label>
-        </div>
-        <button type="submit" class="btn">Choose God</button>
-      </form>
-
+      <div class="pickAGod">
+        <h3>First, select the God you worship. Each will give you certain abilities.</h3>
+        <form id="godSubmit">
+          <div class="radio">
+            <label>
+              <input type="radio" name="god" value="sif">
+              Sif: skips Vanaheim - pick this character if pop culture doesn't come easy to you
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="god" value="odin">
+                Odin: skips Muspelheim - pick this character if logic doesn’t come easy to you
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="god" value="frigg">
+                Frigg: Goddess of fertility - pick this and get an extra life
+            </label>
+          </div>
+          <button type="submit" class="btn">Choose God</button>
+        </form>
+      </div>
       <div id="beginNext">
         <h1 class="customfont"><div id="midgardNextDiv"><a href="midgard.html">Start</a></div></h1>
         <p id="startEnglish">(Start)</p>

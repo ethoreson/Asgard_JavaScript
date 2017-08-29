@@ -11,8 +11,11 @@ img {
 }
 
 .twolives {
-  background-image: url("../img/yellowheart.png");
-  background-image: url("../img/yellowheart.png");
+  display: none;
+}
+
+.oneLife {
+  display: none;
 }
 
 .nav-bar {
