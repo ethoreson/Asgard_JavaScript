@@ -3,25 +3,26 @@
   <head>
     <link href="../css/styles.css" rel="stylesheet" type="text/css">
     <script src="../js/jquery-3.2.1.js"></script>
-    <script src="../js/player.js"></script>
     <script src="../js/scripts.js"></script>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../css/progress.css" rel="stylesheet" type="text/css">
     <link href="../css/index.css" rel="stylesheet" type="text/css">
     <style type="text/css"></style>
-    <title>Asgard</title>
+    <title>Journey to Asgard</title>
   </head>
+  <header>
+    <ul class="navbar nav-bar">
+        <li>Level: 0</li>
+        <li>Lives:<div class="fourlives"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"></div>
+        <div class="threelives"><img src="../img/greenheart.png"><img src="../img/greenheart.png"><img src="../img/greenheart.png"></div></li>
+    </ul>
+  </header>
   <body>
     <div class="container">
-      <!-- <img src="../img/norse.jpeg" alt="the nine worlds"> -->
       <h1>Journey to Asgard</h1>
       <h2>You’re a young, capable human trying to attain their God status. You must make it through the 9 worlds to attain your God status in Asgard. Each world will pose a unique threat. The creatures of each world have lessons to teach you. Be careful, you’re not immortal yet; your lives are listed in the corner.</h2>
-      <div class="fourlives">
-        <img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png">
-      </div>
-      <div class="threelives">
-        <img src="../img/greenheart.png"><img src="../img/greenheart.png"><img src="../img/greenheart.png">
-      </div>
       <h3>First, select the God you worship. Each will give you certain abilities.</h3>
-      <form>
+      <form id="godSubmit">
         <div class="radio">
           <label>
             <input type="radio" name="god" value="sif">
@@ -40,7 +41,7 @@
               Frigg: Goddess of fertility - pick this and get an extra life
           </label>
         </div>
-        <button id="godSubmit" type="submit" class="btn">Choose God</button>
+        <button type="submit" class="btn">Choose God</button>
       </form>
 
       <div id="beginNext">
