@@ -20,12 +20,15 @@ $(document).ready(function() {
     var player = new Player(godName, 3, 0);
     if (player.god === "frigg") {
       player.addLife();
+      $(".fourlives").show();
     } else if (player.god === "sif") {
       player.levelsCompleted.push("Alfheim");
+      $(".threelives").show();
     } else {
       player.levelsCompleted.push("Vanaheim");
+      $(".threelives").show();
     }
-    console.log(player);
+    $("#beginNext").show();
   });
 
 })

@@ -1,14 +1,13 @@
+img {
+  height: 64px;
+  width: 64px;
+}
 .fourlives {
-  : url("../img/blueheart.png");
-  background-image: url("../img/blueheart.png");
-  background-image: url("../img/blueheart.png");
-  background-image: url("../img/blueheart.png");
+  display: none;
 }
 
 .threelives {
-  background-image: url("../img/greenheart.png");
-  background-image: url("../img/greenheart.png");
-  background-image: url("../img/greenheart.png");
+  display: none;
 }
 
 .twolives {
