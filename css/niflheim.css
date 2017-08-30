@@ -30,3 +30,25 @@ h1 {
   margin-left: 950px;
   margin-right: 100px;
 }
+
+
+#board {
+  width: 306px;
+  height: 306px;
+  border: 1px solid #ccc;
+}
+#board div {
+  float: left;
+  height: 100px;
+  width: 100px;
+  border: 1px solid #aaa;
+  text-align: center;
+}
+#board div span {
+  font-family: arial;
+  font-size: 70px;
+  margin-top: 10px;
+  display: block;
+}
+.winner { background-color: lightgreen; }
+#status { font-size: 1.2em; font-weight: bold; }
