@@ -22,9 +22,6 @@ $(document).ready(function() {
       resultText = "Nope! Lose a life."
       $("#output").show();
     }
-
-//    $('#inputs').css('display', 'none');
-//    $('#output').css('display', 'block');
     $('#quiz-result').text(resultText);
   })
 });
