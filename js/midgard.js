@@ -5,7 +5,7 @@ function Game(guessesLeft, winLossStatus, correctlyGuessed) {
   this.correctlyGuessed = correctlyGuessed;
 }
 
-var wordArray = ["elves", "dwarf", "giant", "hammer", "wedding", "mythology", "light", "darkness", "mystery", "heavenly"];
+var wordArray = ["elf", "dwarves", "giant", "bright", "myth", "light", "darkest", "dragon", "earth", "epicodus"];
 
 Game.prototype.selectWord = function(wordArray) {
   var word = wordArray[Math.floor(Math.random() * wordArray.length)];
@@ -62,14 +62,15 @@ Game.prototype.checkForEndGame = function(word) {
 
 // frontend:
 $(document).ready(function() {
+  player.showLives();
   var game = new Game(10, false, []);
   var answer = game.selectWord(wordArray);
   var board = game.populateBlanks(answer);
   var boardString = board.join('');
-//  $(".displayBoard").append(board);
-  $(".displayLivesLeft").append("Guesses Left: " + game.guessesLeft);
-  console.log("ANSWER: " + answer);
   var answerArray = game.generateArray(answer);
+  console.log("ANSWER: " + answer);
+
+
   $("#letterSubmit").submit(function(event) {
     event.preventDefault();
     var letter = $("#letter").val();
@@ -87,12 +88,8 @@ $(document).ready(function() {
     var final = game.checkForEndGame(answer);
     if (final === true && game.guessesLeft === 0) {
       alert("You lost the game! Lose a life and continue");
-      $("#alfheimNextDiv").show();
-    } else if (final === true) {
-      alert("You win!");
-      $("#alfheimNextDiv").show();
+      player.loseLife();
+      player.showLives();
     };
   });
-
-
 });

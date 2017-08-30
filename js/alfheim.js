@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  player.showLives();
   $("#findGold").submit(function(event) {
     event.preventDefault();
     var color = $("input:radio[name=color]:checked").val();
@@ -8,6 +9,7 @@ $(document).ready(function() {
     } else {
       alert("Sorry! Guess again");
       player.loseLife();
+      player.showLives();
     }
   })
 })
