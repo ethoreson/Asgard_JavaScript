@@ -106,6 +106,7 @@
       function init() {
         // register event handler for player turns
         $(document).ready(function() {
+          //player.showLives();
           $("#board div").click(function() {
             if (turn==player) {
               if (!$(this).find("span").length>0) {
@@ -223,6 +224,8 @@
           $(".winner").removeClass("winner");
           turn = player;
           $("#status").empty();
+          //player.loseLife();
+          //player.showLives();
         }
       }
       // new game
