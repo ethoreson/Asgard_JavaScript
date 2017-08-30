@@ -1,42 +1,6 @@
-/**
-* Wordfind.js 0.0.1
-* (c) 2012 Bill, BunKat LLC.
-* Wordfind is freely distributable under the MIT license.
-* For all details and documentation:
-*     http://github.com/bunkat/wordfind
-*/
-
 (function () {
-
-  'use strict';
-
-  /**
-  * Generates a new word find (word search) puzzle provided a set of words.
-  * Can automatically determine the smallest puzzle size in which all words
-  * fit, or the puzzle size can be manually configured.  Will automatically
-  * increase puzzle size until a valid puzzle is found.
-  *
-  * WordFind has no dependencies.
-  */
-
-  /**
-  * Initializes the WordFind object.
-  *
-  * @api private
-  */
   var WordFind = function () {
-
-    // Letters used to fill blank spots in the puzzle
-    var letters = 'abcdefghijklmnoprstuvwy';
-
-    /**
-    * Definitions for all the different orientations in which words can be
-    * placed within a puzzle. New orientation definitions can be added and they
-    * will be automatically available.
-    */
-
-    // The list of all the possible orientations
-    var allOrientations = ['horizontal','horizontalBack','vertical','verticalUp',
+    var letters = 'abcdefghijklmnoprstuvwy';    var allOrientations = ['horizontal','horizontalBack','vertical','verticalUp',
                            'diagonal','diagonalUp','diagonalBack','diagonalUpBack'];
 
     // The definition of the orientation, calculates the next square given a
@@ -82,15 +46,6 @@
       diagonalUpBack: function(x,y,l) { return {x: l-1, y: x>=l-1?y+1:y  }; }
     };
 
-    /**
-    * Initializes the puzzle and places words in the puzzle one at a time.
-    *
-    * Returns either a valid puzzle with all of the words or null if a valid
-    * puzzle was not found.
-    *
-    * @param {[String]} words: The list of words to fit into the puzzle
-    * @param {[Options]} options: The options to use when filling the puzzle
-    */
     var fillPuzzle = function (words, options) {
 
       var puzzle = [], i, j, len;
@@ -115,17 +70,6 @@
       return puzzle;
     };
 
-    /**
-    * Adds the specified word to the puzzle by finding all of the possible
-    * locations where the word will fit and then randomly selecting one. Options
-    * controls whether or not word overlap should be maximized.
-    *
-    * Returns true if the word was successfully placed, false otherwise.
-    *
-    * @param {[[String]]} puzzle: The current state of the puzzle
-    * @param {[Options]} options: The options to use when filling the puzzle
-    * @param {String} word: The word to fit into the puzzle.
-    */
     var placeWordInPuzzle = function (puzzle, options, word) {
 
       // find all of the best locations where this word would fit
@@ -142,19 +86,6 @@
       return true;
     };
 
-    /**
-    * Iterates through the puzzle and determines all of the locations where
-    * the word will fit. Options determines if overlap should be maximized or
-    * not.
-    *
-    * Returns a list of location objects which contain an x,y cooridinate
-    * indicating the start of the word, the orientation of the word, and the
-    * number of letters that overlapped with existing letter.
-    *
-    * @param {[[String]]} puzzle: The current state of the puzzle
-    * @param {[Options]} options: The options to use when filling the puzzle
-    * @param {String} word: The word to fit into the puzzle.
-    */
     var findBestLocations = function (puzzle, options, word) {
 
       var locations = [],
@@ -212,19 +143,6 @@
              locations;
     };
 
-    /**
-    * Determines whether or not a particular word fits in a particular
-    * orientation within the puzzle.
-    *
-    * Returns the number of letters overlapped with existing words if the word
-    * fits in the specified position, -1 if the word does not fit.
-    *
-    * @param {String} word: The word to fit into the puzzle.
-    * @param {[[String]]} puzzle: The current state of the puzzle
-    * @param {int} x: The x position to check
-    * @param {int} y: The y position to check
-    * @param {function} fnGetSquare: Function that returns the next square
-    */
     var calcOverlap = function (word, puzzle, x, y, fnGetSquare) {
       var overlap = 0;
 
@@ -251,16 +169,6 @@
       return overlap;
     };
 
-    /**
-    * If overlap maximization was indicated, this function is used to prune the
-    * list of valid locations down to the ones that contain the maximum overlap
-    * that was previously calculated.
-    *
-    * Returns the pruned set of locations.
-    *
-    * @param {[Location]} locations: The set of locations to prune
-    * @param {int} overlap: The required level of overlap
-    */
     var pruneLocations = function (locations, overlap) {
 
       var pruned = [];
@@ -273,15 +181,6 @@
       return pruned;
     };
 
-    /**
-    * Places a word in the puzzle given a starting position and orientation.
-    *
-    * @param {[[String]]} puzzle: The current state of the puzzle
-    * @param {String} word: The word to fit into the puzzle.
-    * @param {int} x: The x position to check
-    * @param {int} y: The y position to check
-    * @param {function} fnGetSquare: Function that returns the next square
-    */
     var placeWord = function (puzzle, word, x, y, fnGetSquare) {
       for (var i = 0, len = word.length; i < len; i++) {
         var next = fnGetSquare(x, y, i);
@@ -290,37 +189,9 @@
     };
 
     return {
-
-      /**
-      * Returns the list of all of the possible orientations.
-      * @api public
-      */
       validOrientations: allOrientations,
-
-      /**
-      * Returns the orientation functions for traversing words.
-      * @api public
-      */
       orientations: orientations,
 
-      /**
-      * Generates a new word find (word search) puzzle.
-      *
-      * Settings:
-      *
-      * height: desired height of the puzzle, default: smallest possible
-      * width:  desired width of the puzzle, default: smallest possible
-      * orientations: list of orientations to use, default: all orientations
-      * fillBlanks: true to fill in the blanks, default: true
-      * maxAttempts: number of tries before increasing puzzle size, default:3
-      * preferOverlap: maximize word overlap or not, default: true
-      *
-      * Returns the puzzle that was created.
-      *
-      * @param {[String]} words: List of words to include in the puzzle
-      * @param {options} settings: The options to use for this puzzle
-      * @api public
-      */
       newPuzzle: function(words, settings) {
         var wordList, puzzle, attempts = 0, opts = settings || {};
 
@@ -363,12 +234,7 @@
         return puzzle;
       },
 
-      /**
-      * Fills in any empty spaces in the puzzle with random letters.
-      *
-      * @param {[[String]]} puzzle: The current state of the puzzle
-      * @api public
-      */
+      // Fills empty spaces w/random
       fillBlanks: function (puzzle) {
         for (var i = 0, height = puzzle.length; i < height; i++) {
           var row = puzzle[i];
@@ -382,22 +248,6 @@
         }
       },
 
-      /**
-      * Returns the starting location and orientation of the specified words
-      * within the puzzle. Any words that are not found are returned in the
-      * notFound array.
-      *
-      * Returns
-      *   x position of start of word
-      *   y position of start of word
-      *   orientation of word
-      *   word
-      *   overlap (always equal to word.length)
-      *
-      * @param {[[String]]} puzzle: The current state of the puzzle
-      * @param {[String]} words: The list of words to find
-      * @api public
-      */
       solve: function (puzzle, words) {
         var options = {
                         height:       puzzle.length,
@@ -424,13 +274,6 @@
         return { found: found, notFound: notFound };
       },
 
-      /**
-      * Outputs a puzzle to the console, useful for debugging.
-      * Returns a formatted string representing the puzzle.
-      *
-      * @param {[[String]]} puzzle: The current state of the puzzle
-      * @api public
-      */
       print: function (puzzle) {
         var puzzleString = '';
         for (var i = 0, height = puzzle.length; i < height; i++) {

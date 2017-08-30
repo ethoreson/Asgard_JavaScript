@@ -1,38 +1,8 @@
-/**
-* Wordfind.js 0.0.1
-* (c) 2012 Bill, BunKat LLC.
-* Wordfind is freely distributable under the MIT license.
-* For all details and documentation:
-*     http://github.com/bunkat/wordfind
-*/
 
 (function (document, $, wordfind) {
-
-  'use strict';
-
-  /**
-  * An example game using the puzzles created from wordfind.js. Click and drag
-  * to highlight words.
-  *
-  * WordFindGame requires wordfind.js and jQuery.
-  */
-
-  /**
-  * Initializes the WordFindGame object.
-  *
-  * @api private
-  */
   var WordFindGame = function() {
 
-    // List of words for this game
     var wordList;
-
-    /**
-    * Draws the puzzle by inserting rows of buttons into el.
-    *
-    * @param {String} el: The jQuery element to write the puzzle to
-    * @param {[[String]]} puzzle: The puzzle to draw
-    */
     var drawPuzzle = function (el, puzzle) {
 
       var output = '';
@@ -55,12 +25,6 @@
       $(el).html(output);
     };
 
-    /**
-    * Draws the words by inserting an unordered list into el.
-    *
-    * @param {String} el: The jQuery element to write the words to
-    * @param {[String]} words: The words to draw
-    */
     var drawWords = function (el, words) {
 
       var output = '<ul>';
@@ -72,15 +36,6 @@
 
       $(el).html(output);
     };
-
-
-    /**
-    * Game play events.
-    *
-    * The following events handle the turns, word selection, word finding, and
-    * game end.
-    *
-    */
 
     // Game state
     var startSquare, selectedSquares = [], curOrientation, curWord = '';
@@ -97,14 +52,6 @@
       curWord = $(this).text();
     };
 
-
-
-    /**
-    * Event that handles mouse over on a new square. Ensures that the new square
-    * is adjacent to the previous square and the new square is along the path
-    * of an actual word.
-    *
-    */
     var select = function (target) {
       // if the user hasn't started a word yet, just return
       if (!startSquare) {
@@ -187,11 +134,6 @@
       select(this);
     };
 
-    /**
-    * Updates the game state when the previous selection was valid.
-    *
-    * @param {el} square: The jQuery element that was played
-    */
     var playTurn = function (square) {
 
       // make sure we are still forming a valid word
@@ -205,12 +147,6 @@
       }
     };
 
-    /**
-    * Event that handles mouse up on a square. Checks to see if a valid word
-    * was created and updates the class of the letters and word if it was. Then
-    * resets the game state to start a new word.
-    *
-    */
     var endTurn = function () {
 
       // see if we formed a valid word
@@ -237,15 +173,6 @@
       curOrientation = null;
     };
 
-    /**
-    * Given two points, ensure that they are adjacent and determine what
-    * orientation the second point is relative to the first
-    *
-    * @param {int} x1: The x coordinate of the first point
-    * @param {int} y1: The y coordinate of the first point
-    * @param {int} x2: The x coordinate of the second point
-    * @param {int} y2: The y coordinate of the second point
-    */
     var calcOrientation = function (x1, y1, x2, y2) {
 
       for (var orientation in wordfind.orientations) {
@@ -262,16 +189,7 @@
 
     return {
 
-      /**
-      * Creates a new word find game and draws the board and words.
-      *
-      * Returns the puzzle that was created.
-      *
-      * @param {[String]} words: The words to add to the puzzle
-      * @param {String} puzzleEl: Selector to use when inserting the puzzle
-      * @param {String} wordsEl: Selector to use when inserting the word list
-      * @param {Options} options: WordFind options to use when creating the puzzle
-      */
+      // returns puzzle that was created
       create: function(words, puzzleEl, wordsEl, options) {
 
         wordList = words.slice(0).sort();
@@ -282,8 +200,6 @@
         drawPuzzle(puzzleEl, puzzle);
         drawWords(wordsEl, wordList);
 
-        // attach events to the buttons
-        // optimistically add events for windows 8 touch
         if (window.navigator.msPointerEnabled) {
           $('.puzzleSquare').on('MSPointerDown', startTurn);
           $('.puzzleSquare').on('MSPointerOver', select);
@@ -301,12 +217,6 @@
         return puzzle;
       },
 
-      /**
-      * Solves an existing puzzle.
-      *
-      * @param {[[String]]} puzzle: The puzzle to solve
-      * @param {[String]} words: The words to solve for
-      */
       solve: function(puzzle, words) {
 
         var solution = wordfind.solve(puzzle, words).found;
