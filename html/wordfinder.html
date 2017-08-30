@@ -9,8 +9,8 @@
     <div id='puzzle'></div>
     <div id='words'></div>
 
-    <div id="helNextDiv">
-      <a href="hel.html">Next</a>
+    <div id="jotunheimNextDiv">
+      <a href="jotunheim.html">Next</a>
       <h3>Password hint goes here...</h3>
     </div>
 
@@ -20,11 +20,14 @@
     <script type="text/javascript" src="../js/wordfindergame.js"></script>
     <script>
 
-      var words = [ 'midgard', 'alfheim', 'svartalfheim', 'niflheim', 'muspelheim', 'vanaheim', 'jotunheim', 'hel', 'asgard'];
+      var words = [ 'svartalfheim', 'niflheim', 'muspelheim'];
+
+      // var words = [ 'midgard', 'alfheim', 'svartalfheim', 'niflheim', 'muspelheim', 'vanaheim', 'jotunheim', 'hel', 'asgard'];
+
       // var words = [ 'midgard' ];
+
       var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
       wordfind.print(puzzle);
-
 
     </script>
   </body>

@@ -1,17 +1,19 @@
+
 (function (document, $, wordfind) {
-
-
   var WordFindGame = function() {
 
     var wordList;
     var drawPuzzle = function (el, puzzle) {
 
       var output = '';
-      //Each row of the puzzle...
+      // for each row in the puzzle
       for (var i = 0, height = puzzle.length; i < height; i++) {
+        // append a div to represent a row in the puzzle
         var row = puzzle[i];
         output += '<div>';
+        // for each element in that row
         for (var j = 0, width = row.length; j < width; j++) {
+            // append our button with the appropriate class
             output += '<button class="puzzleSquare" x="' + j + '" y="' + i + '">';
             output += row[j] || '&nbsp;';
             output += '</button>';
@@ -24,19 +26,25 @@
     };
 
     var drawWords = function (el, words) {
+
       var output = '<ul>';
       for (var i = 0, len = words.length; i < len; i++) {
         var word = words[i];
         output += '<li class="word ' + word + '">' + word;
       }
       output += '</ul>';
+
       $(el).html(output);
     };
-
 
     // Game state
     var startSquare, selectedSquares = [], curOrientation, curWord = '';
 
+    /**
+    * Event that handles mouse down on a new square. Initializes the game state
+    * to the letter that was selected.
+    *
+    */
     var startTurn = function () {
       $(this).addClass('selected');
       startSquare = this;
@@ -45,14 +53,19 @@
     };
 
     var select = function (target) {
+      // if the user hasn't started a word yet, just return
       if (!startSquare) {
         return;
       }
+
+      // if the new square is actually the previous square, just return
       var lastSquare = selectedSquares[selectedSquares.length-1];
       if (lastSquare == target) {
         return;
       }
 
+      // see if the user backed up and correct the selectedSquares state if
+      // they did
       var backTo;
       for (var i = 0, len = selectedSquares.length; i < len; i++) {
         if (selectedSquares[i] == target) {
@@ -67,6 +80,26 @@
         curWord = curWord.substr(0, curWord.length-1);
       }
 
+
+      // see if this is just a new orientation from the first square
+      // this is needed to make selecting diagonal words easier
+      var newOrientation = calcOrientation(
+          $(startSquare).attr('x')-0,
+          $(startSquare).attr('y')-0,
+          $(target).attr('x')-0,
+          $(target).attr('y')-0
+          );
+
+      if (newOrientation) {
+        selectedSquares = [startSquare];
+        curWord = $(startSquare).text();
+        if (lastSquare !== startSquare) {
+          $(lastSquare).removeClass('selected');
+          lastSquare = startSquare;
+        }
+        curOrientation = newOrientation;
+      }
+
       // see if the move is along the same orientation as the last move
       var orientation = calcOrientation(
           $(lastSquare).attr('x')-0,
@@ -74,6 +107,12 @@
           $(target).attr('x')-0,
           $(target).attr('y')-0
           );
+
+      // if the new square isn't along a valid orientation, just ignore it.
+      // this makes selecting diagonal words less frustrating
+      if (!orientation) {
+        return;
+      }
 
       // finally, if there was no previous orientation or this move is along
       // the same orientation as the last move then play the move
@@ -121,8 +160,8 @@
 
         if (wordList.length === 0) {
           $('.puzzleSquare').addClass('complete');
-          alert("You have completed the Word Finder!");
-          $("#helNextDiv").show();
+          alert("You have completed the Word Search!");
+          $("#jotunheimNextDiv").show();
         }
       }
 
@@ -150,6 +189,7 @@
 
     return {
 
+      // returns puzzle that was created
       create: function(words, puzzleEl, wordsEl, options) {
 
         wordList = words.slice(0).sort();
@@ -160,8 +200,6 @@
         drawPuzzle(puzzleEl, puzzle);
         drawWords(wordsEl, wordList);
 
-        // attach events to the buttons
-        // optimistically add events for windows 8 touch
         if (window.navigator.msPointerEnabled) {
           $('.puzzleSquare').on('MSPointerDown', startTurn);
           $('.puzzleSquare').on('MSPointerOver', select);
@@ -179,9 +217,35 @@
         return puzzle;
       },
 
+      solve: function(puzzle, words) {
+
+        var solution = wordfind.solve(puzzle, words).found;
+
+        for( var i = 0, len = solution.length; i < len; i++) {
+          var word = solution[i].word,
+              orientation = solution[i].orientation,
+              x = solution[i].x,
+              y = solution[i].y,
+              next = wordfind.orientations[orientation];
+
+          if (!$('.' + word).hasClass('wordFound')) {
+            for (var j = 0, size = word.length; j < size; j++) {
+              var nextPos = next(x, y, j);
+              $('[x="' + nextPos.x + '"][y="' + nextPos.y + '"]').addClass('solved');
+            }
+
+            $('.' + word).addClass('wordFound');
+          }
+        }
+
+      }
     };
   };
 
+
+  /**
+  * Allow game to be used within the browser
+  */
   window.wordfindgame = WordFindGame();
 
 }(document, jQuery, wordfind));
