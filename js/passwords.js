@@ -16,13 +16,15 @@ $(document).ready(function() {
     if (password === 'visible' && 'tolkien' && 'underground' && 'frozen' && 'giants') {
       resultText = "You got it!"
       alert("Correct!");
-
+      debugger;
+      $("#output").show();
     } else {
-      resultText = "Nope! Try again."
+      resultText = "Nope! Lose a life."
+      $("#output").show();
     }
 
-    $('#inputs').css('display', 'none');
-    $('#output').css('display', 'block');
+//    $('#inputs').css('display', 'none');
+//    $('#output').css('display', 'block');
     $('#quiz-result').text(resultText);
   })
 });
