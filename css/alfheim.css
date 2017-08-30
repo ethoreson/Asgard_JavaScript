@@ -1,12 +1,25 @@
 body {
-  /*background-image: url('https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif');*/
+  background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
   background-repeat: none;
+  background-position: center;
   background-size: cover;
+  background-size: 100%;
+  text-align: center;
+  font-family: 'Mystery Quest';
+  margin-top: 100px;
 }
 
-container {
+.container {
+  margin-left: 600px;
+  margin-right: 100px;
   background-color: white;
+  color: #1B4F72;
+  background-size: 80%;
 }
+
+/*container {
+  background-color: white;
+}*/
 
 
 #svartalfheimNextDiv {
