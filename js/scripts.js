@@ -12,27 +12,23 @@ Player.prototype.loseLife = function() {
   return this.lives -= 1;
 }
 
+Player.prototype.showLives = function() {
+  if (player.lives === 4) {
+    $(".fourlives").show();
+  } else if (player.lives === 3) {
+    $(".threelives").show();
+    $(".fourlives").hide();
+  } else if (player.lives === 2) {
+    $(".twolives").show();
+    $(".threelives").hide();
+  } else {
+    $(".oneLife").show();
+    $(".twolives").hide();
+  }
+}
+
+var player = new Player("godName", 3, 0);
+
+
+
 //exports.playerModule = Player;
-
-
-//index js, frontend:
-$(document).ready(function() {
-  $("#godSubmit").submit(function(event) {
-    event.preventDefault();
-    var godName = $("input:radio[name=god]:checked").val();
-    var player = new Player(godName, 3, 0);
-    if (player.god === "frigg") {
-      player.addLife();
-      $(".fourlives").show();
-    } else if (player.god === "sif") {
-      player.levelsCompleted.push("Alfheim");
-      $(".threelives").show();
-    } else {
-      player.levelsCompleted.push("Vanaheim");
-      $(".threelives").show();
-    }
-    $(".pickAGod").hide();
-    $("#beginNext").show();
-  });
-
-})
