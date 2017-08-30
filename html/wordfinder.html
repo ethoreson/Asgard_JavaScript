@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vanaheim Word Finder</title>
+    <link rel="stylesheet" type="text/css" href="../css/wordfinder.css">
+  </head>
+  <body>
+    <h2>You have entered Muspelheim. Complete the Word Finder to move on to the next page.</h2>
+    <div id='puzzle'></div>
+    <div id='words'></div>
+
+    <div id="helNextDiv">
+      <a href="hel.html">Next</a>
+      <h3>Password hint goes here...</h3>
+    </div>
+
+
+    <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/wordfinder.js"></script>
+    <script type="text/javascript" src="../js/wordfindergame.js"></script>
+    <script>
+
+      var words = [ 'midgard', 'alfheim', 'svartalfheim', 'niflheim', 'muspelheim', 'vanaheim', 'jotunheim', 'hel', 'asgard'];
+      // var words = [ 'midgard' ];
+      var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
+      wordfind.print(puzzle);
+
+
+    </script>
+  </body>
+</html>
