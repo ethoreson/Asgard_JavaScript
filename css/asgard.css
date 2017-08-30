@@ -1,8 +1,3 @@
-#muspelheimNextDiv{
-  display: none;
-}
-
-
 body {
   background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
   background-repeat: none;
@@ -15,7 +10,9 @@ body {
 }
 
 .container {
-  margin-left: 200px;
+  position: relative;
+  margin-top: 500px;
+  margin-left: 600px;
   margin-right: 100px;
   background-color: white;
   color: #1B4F72;
@@ -24,9 +21,4 @@ body {
 
 h1 {
   font-size: 80px;
-}
-
-.tic-tac-toe {
-  margin-left: 950px;
-  margin-right: 100px;
 }
