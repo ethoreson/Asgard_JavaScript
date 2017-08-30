@@ -5,7 +5,7 @@ function Game(guessesLeft, winLossStatus, correctlyGuessed) {
   this.correctlyGuessed = correctlyGuessed;
 }
 
-var wordArray = ["elves", "dwarf", "giant", "hammer", "wedding", "mythology"];
+var wordArray = ["elves", "dwarf", "giant", "hammer", "wedding", "mythology", "light", "darkness", "mystery", "heavenly"];
 
 Game.prototype.selectWord = function(wordArray) {
   var word = wordArray[Math.floor(Math.random() * wordArray.length)];
@@ -24,16 +24,14 @@ Game.prototype.populateBlanks = function(word) {
   return this.correctlyGuessed;
 }
 
-Game.prototype.replaceAt = function(index, replacement, string) {
-  return string.substr(0, index) + replacement + string.substr(index + replacement.length);
+String.prototype.replaceAt=function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
 }
 
 Game.prototype.takeAGuess = function(guess, answer) {
   var result = answer.includes(guess);
   if (result === true) {
-    console.log("contains " + guess);
   } else {
-    console.log("does not contain " + guess);
     this.guessesLeft -= 1;
   }
   return result;
@@ -41,18 +39,12 @@ Game.prototype.takeAGuess = function(guess, answer) {
 
 Game.prototype.displayResult = function(letter, array, answer, board) {
   var changeBlankHere = [];
-  console.log("answer: " + answer)
-  console.log("array of word: " + array);
-  console.log("should be length of word: " + array.length);
-  debugger; //
   for (var i=0; i<answer.length; i++) { // for 5 times do:
-    console.log(i);
-    console.log(answer.indexOf(letter));
     if (i === answer.indexOf(letter)) { // if 'w' is w
-      var newDisplay = this.replaceAt(i, letter, board);
-      console.log(newDisplay);
+      var newDisplay = board.replaceAt(i, letter);
     }
   }
+  return newDisplay;
 };
 
 Game.prototype.checkForEndGame = function(word) {
@@ -73,8 +65,9 @@ $(document).ready(function() {
   var game = new Game(10, false, []);
   var answer = game.selectWord(wordArray);
   var board = game.populateBlanks(answer);
-  $(".displayBoard").append(board);
-
+  var boardString = board.join('');
+//  $(".displayBoard").append(board);
+  $(".displayLivesLeft").append("Guesses Left: " + game.guessesLeft);
   console.log("ANSWER: " + answer);
   var answerArray = game.generateArray(answer);
   $("#letterSubmit").submit(function(event) {
@@ -83,9 +76,12 @@ $(document).ready(function() {
     var print = game.takeAGuess(letter, answer);
     console.log("answer array: " + answerArray);
     if (print === true) {
-      game.displayResult(letter, answerArray, answer, board); // this is broken
+      printThis = game.displayResult(letter, answerArray, answer, boardString);
+      console.log(printThis);
+      var printThisEdited = printThis.split('').join(' ');
+      $(".displayBoard").append(printThisEdited);
     } else {
-      $(".displayLivesLeft").append("Guesses Left: " + game.guessesLeft);
+      $(".displayLivesLeft").append(game.guessesLeft);
     }
     //check for win/loss:
     var final = game.checkForEndGame(answer);
