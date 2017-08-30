@@ -1,3 +1,13 @@
+body {
+  /*background-image: url('https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif');*/
+  background-repeat: none;
+  background-size: cover;
+}
+
+container {
+  background-color: white;
+}
+
 
 #svartalfheimNextDiv {
   font-size: 100px;

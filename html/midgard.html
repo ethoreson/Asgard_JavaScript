@@ -7,7 +7,7 @@
     <script src="../js/scripts.js"></script>
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../css/progress.css" rel="stylesheet" type="text/css">
-    <link href="../js/midgard.js"></script>
+    <script src="../js/midgard.js"></script>
     <title></title>
   </head>
   <header>
@@ -21,9 +21,10 @@
   <h3>You start on Midgard, and want to make it off this mortal rock. Figure out this Hangman, and untether yourself from this world. </h3>
   <div id="alfheimNextDiv"><a href="alfheim.html">Next</a></div>
   <h4>Hangman!</h4>
-  <label>Enter guess:</label>
-  <input id="guess" type="text">
-  <button class="button" id="guessButton">Guess</button>
-  <div class="showHangman"></div>
+  <form id="letterSubmit">
+    <label for="letterGuess">Guess:</label>
+    <input id="letter" name="letter" type="text">
+    <button id="submit" type="submit" class="btn">Guess</button>
+  </form>
   </body>
 </html>

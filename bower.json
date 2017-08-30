@@ -1,0 +1,21 @@
+{
+  "name": "asgard-javascript",
+  "description": "## Setup Instructions",
+  "main": "index.js",
+  "authors": [
+    "Emilie Thoreson <thoresonemilie@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ethoreson/Asgard_JavaScript",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
