@@ -1,0 +1,59 @@
+#muspelheimNextDiv {
+  display: none;
+}
+
+#puzzle {
+  border: 2px solid black;
+  padding: 20px;
+  float: left;
+  margin: 30px 20px;
+}
+
+/*Individual Letter Square*/
+#puzzle .puzzleSquare {
+  height: 30px;
+  width: 30px;
+  text-transform: uppercase;
+  background-color: white;
+  border: 0;
+  font-size: 20px;
+}
+
+/*Letters Selected*/
+#puzzle .selected {
+  background-color: rgba(218, 247, 166, 0.80);
+}
+
+/*Words Found - Puzzle*/
+#puzzle .found {
+  background-color: #1B4F72;
+  color: rgba(218, 247, 166, 0.80);
+}
+
+/*Words Found - List*/
+#words .wordFound {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/*Word List*/
+#words {
+  padding-top: 20px;
+  font-size: 25px;
+  font: sans-serif;
+}
+/*Word List - No bullets*/
+#words ul {
+  list-style-type: none;
+}
+
+/*Text for password and level info*/
+h2 {
+  font: 22pt sans-serif;
+  margin: 20px 20px 0px 20px;
+}
+
+h3 {
+  font: 16pt sans-serif;
+  margin: 20px 20px 0px 20px;
+}
