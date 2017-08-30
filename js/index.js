@@ -1,4 +1,5 @@
 var player = require('./../js/scripts.js').playerModule;
+
 $(document).ready(function() {
   $("#godSubmit").submit(function(event) {
     event.preventDefault();
