@@ -48,3 +48,5 @@ You’ve done it! You’re certified immortal. The elves, the dwarves, giants an
 
 ## Stretch Goal
 Start timer at beginning of game (can remain hidden). When player reaches Asgard, total time is displayed, and user can enter their name, what they’re the God/dess of, saves to database. Display Top 10 finishers.
+
+GIF: https://giphy.com/gifs/3oKGzobrkE3FQxAG8U/download
