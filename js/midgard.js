@@ -14,13 +14,14 @@ Game.prototype.selectWord = function(wordArray) {
 
 Game.prototype.generateArray = function(word) {
   var wordArray = word.split('');
+  return wordArray;
 }
 
 Game.prototype.populateBlanks = function(word) {
   for (var i=0; i<word.length; i++) {
     this.correctlyGuessed.push("_");
-    return this.correctlyGuessed;
   }
+  return this.correctlyGuessed;
 }
 
 Game.prototype.takeAGuess = function(guess, answer) {
@@ -34,25 +35,28 @@ Game.prototype.takeAGuess = function(guess, answer) {
   return result;
 };
 
-Game.prototype.displayResult = function(letter) {
+Game.prototype.displayResult = function(letter, array) {
   var changeBlankHere = [];
-  for (var i=0; i<this.answerArray.length; i++) {
-    if (letter = this.answerArray.indexAt(i)) {
-      changeBlankHere.push(i);
-      console.log(changeBlankHere); //should be 0, or 0, 3 if elves
+  console.log("array of word: " + array);
+  console.log("should be length of word: " + array.length); //
+  for (var i=0; i<array.length; i++) {
+    console.log(array.indexOf(i)); // 'spell out word';
+    if (letter = array.indexOf(i)) { // if 'x' is this letter
+      changeBlankHere.push(i); //push index into array
+      console.log("should be 0: " + changeBlankHere); //should be 0, or 0, 3 if elves
       this.correctlyGuessed.replace(letter, i);
       console.log(correctlyGuessed);
     }
   }
 };
 
-Game.prototype.checkForEndGame = function() {
+Game.prototype.checkForEndGame = function(word) {
   if (this.guessesLeft === 0) {
     this.winLossStatus = true;
     return true;
-  } else if (){ //winning logic goes here!!!!!!!
-    this.winLossStatus = true;
-    return true;
+  // } else if (correctlyGuessed.length === word.length) { //winning logic goes here!!!!!!!
+  //   this.winLossStatus = true;
+  //   return true;
   } else {
     return false;
   }
@@ -63,14 +67,18 @@ Game.prototype.checkForEndGame = function() {
 $(document).ready(function() {
   var game = new Game(10, false, []);
   var answer = game.selectWord(wordArray);
-  var board = game.populateBlanks(answer);
-  console.log(game);
+  var board = game.populateBlanks(answer); //board = _____
   console.log("ANSWER: " + answer);
+  var answerArray = game.generateArray(answer);
   $("#letterSubmit").submit(function(event) {
     event.preventDefault();
     var letter = $("#letter").val();
     var print = game.takeAGuess(letter, answer);
-    var final = game.checkForEndGame();
+    if (print = true) {
+      game.displayResult(letter, answerArray);
+    }
+
+    var final = game.checkForEndGame(answer);
     if (final = true && game.guessesLeft === 0) {
       alert("You lost the game! Lose a life and continue");
       $("#alfheimNextDiv").show();
@@ -87,7 +95,6 @@ $(document).ready(function() {
       $(".displayLivesLeft").append("Guesses Left: " + game.guessesLeft);
     }
   })
-  console.log("ANSWER: " + answer)
 
 
 })
