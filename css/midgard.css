@@ -1,4 +1,12 @@
 #alfheimNextDiv {
   font-size: 100px;
-  /*display: none;*/
+  display: none;
+}
+
+.displayBoard {
+  font-size: 100px;
+}
+
+.displayLivesLeft{
+  font-size: 50px;
 }
