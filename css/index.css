@@ -1,20 +1,24 @@
 body {
-  background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1899687.jpg);
+  background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
   background-repeat: none;
   background-position: center;
   background-size: cover;
-  background-size: 80%;
+  background-size: 100%;
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Sans-Serif';
   margin-top: 100px;
 }
 
 .container {
-  margin-left: 100px;
+  margin-left: 600px;
   margin-right: 100px;
-  background-color: rgba(218, 247, 166, 0.80);
+  background-color: white;
   color: #1B4F72;
   background-size: 80%;
+}
+
+h1 {
+  font-size: 80px;
 }
 
 #beginNext {
@@ -34,3 +38,32 @@ h1.customfont {
 #startEnglish {
   font-size: 16px;
 }
+
+.btn {
+  background: #6a7574;
+  background-image: -webkit-linear-gradient(top, #6a7574, #ccd8e0);
+  background-image: -moz-linear-gradient(top, #6a7574, #ccd8e0);
+  background-image: -ms-linear-gradient(top, #6a7574, #ccd8e0);
+  background-image: -o-linear-gradient(top, #6a7574, #ccd8e0);
+  background-image: linear-gradient(to bottom, #6a7574, #ccd8e0);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #0a010a;
+  font-size: 60px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #192933;
+  background-image: -webkit-linear-gradient(top, #192933, #36804d);
+  background-image: -moz-linear-gradient(top, #192933, #36804d);
+  background-image: -ms-linear-gradient(top, #192933, #36804d);
+  background-image: -o-linear-gradient(top, #192933, #36804d);
+  background-image: linear-gradient(to bottom, #192933, #36804d);
+  text-decoration: none;
+}
+
+font-family:"

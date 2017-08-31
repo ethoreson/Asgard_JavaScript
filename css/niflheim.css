@@ -1,3 +1,54 @@
 #muspelheimNextDiv{
   display: none;
 }
+
+
+body {
+  background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  background-size: 100%;
+  text-align: center;
+  font-family: 'Sans-Serif';
+  margin-top: 100px;
+}
+
+.container {
+  margin-left: 200px;
+  margin-right: 100px;
+  background-color: white;
+  color: #1B4F72;
+  background-size: 80%;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.tic-tac-toe {
+  margin-left: 950px;
+  margin-right: 100px;
+}
+
+
+#board {
+  width: 306px;
+  height: 306px;
+  border: 1px solid #ccc;
+}
+#board div {
+  float: left;
+  height: 100px;
+  width: 100px;
+  border: 1px solid #aaa;
+  text-align: center;
+}
+#board div span {
+  font-family: arial;
+  font-size: 70px;
+  margin-top: 10px;
+  display: block;
+}
+.winner { background-color: lightgreen; }
+#status { font-size: 1.2em; font-weight: bold; }
