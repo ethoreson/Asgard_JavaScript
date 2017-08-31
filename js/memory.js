@@ -70,5 +70,6 @@ function memoryFlipTile(tile,val){
 }
 // window.addEventListener(newBoard());
 $(document).ready(function() {
+  player.showLives();
   newBoard();
 })

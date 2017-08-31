@@ -58,6 +58,7 @@ function val(x,y,newVal) {
 function init() {
   // register event handler for player turns
   $(document).ready(function() {
+    player.showLives();
     $("#board div").click(function() {
       if (turn==player) {
         if (!$(this).find("span").length>0) {
@@ -171,6 +172,8 @@ function finish(p, highlight) {
   }
   if (p!='X') {
     alert("You lose one life. Please try again.");
+    player.loseLife();
+    player.showLives();
     $("#board div").find("span").remove();
     $(".winner").removeClass("winner");
     turn = player;

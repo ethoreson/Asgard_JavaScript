@@ -21,7 +21,6 @@ h1 {
   font-size: 80px;
 }
 
-
 #svartalfheimNextDiv {
   font-size: 100px;
   display: none;
@@ -48,7 +47,7 @@ table tr:nth-of-type(4n) th {
   border-bottom: 3px solid black;
 }
 
-#bordertyr {
+.bordertyr {
   border-right: 3px solid black;
 }
 
@@ -78,4 +77,12 @@ label {
 
 li {
   font-size: 24px;
+}
+
+.black {
+  background-color: black;
+}
+
+.findGold {
+  display: inline;
 }
