@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
+  background-image: url("https://media.giphy.com/media/3ohhwhUwyOA2QgI3Cw/giphy.gif");
   background-repeat: none;
   background-position: center;
   background-size: cover;
@@ -39,31 +39,8 @@ h1.customfont {
   font-size: 16px;
 }
 
-.btn {
-  background: #6a7574;
-  background-image: -webkit-linear-gradient(top, #6a7574, #ccd8e0);
-  background-image: -moz-linear-gradient(top, #6a7574, #ccd8e0);
-  background-image: -ms-linear-gradient(top, #6a7574, #ccd8e0);
-  background-image: -o-linear-gradient(top, #6a7574, #ccd8e0);
-  background-image: linear-gradient(to bottom, #6a7574, #ccd8e0);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #0a010a;
-  font-size: 60px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #192933;
-  background-image: -webkit-linear-gradient(top, #192933, #36804d);
-  background-image: -moz-linear-gradient(top, #192933, #36804d);
-  background-image: -ms-linear-gradient(top, #192933, #36804d);
-  background-image: -o-linear-gradient(top, #192933, #36804d);
-  background-image: linear-gradient(to bottom, #192933, #36804d);
-  text-decoration: none;
+form {
+  font-size: 50px;
 }
 
 font-family:"
