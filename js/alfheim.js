@@ -4,7 +4,6 @@ $(document).ready(function() {
     event.preventDefault();
     var color = $("input:radio[name=color]:checked").val();
     if (color === "gold") {
-      alert("correct!");
       $("#svartalfheimNextDiv").show();
     } else {
       alert("Sorry! Guess again");
