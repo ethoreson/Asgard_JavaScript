@@ -1,0 +1,30 @@
+#jotunheimNextDiv {
+  display: none;
+}
+
+body {
+  background: black;
+}
+
+#memory_board{
+	background: rgba(218, 247, 166, 0.80);
+	border: black 1px solid;
+	width:915px;
+	height:340px;
+	padding:24px;
+	margin:0px auto;
+}
+
+/*all child divs within/memory_board*/
+#memory_board > div{
+	background: #ffffff;
+	border:#000 1px solid;
+	width:90px;
+	height:40px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:20px;
+	cursor:pointer;
+	text-align:center;
+}
