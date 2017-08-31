@@ -92,6 +92,7 @@ $(document).ready(function() {
       alert("You lost the game! Lose a life and continue");
       player.loseLife();
       player.showLives();
+      $("#alfheimNextDiv").show();
     };
     if (final === true && game.answerTally === answer.length) {
       alert("You win!");
