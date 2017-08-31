@@ -1,12 +1,13 @@
 //backend:
-function Game(guessesLeft, winLossStatus, correctlyGuessed) {
+function Game(guessesLeft, winLossStatus, correctlyGuessed, answerTally) {
   this.guessesLeft = guessesLeft;
   this.winLossStatus = winLossStatus;
   this.correctlyGuessed = correctlyGuessed;
+  this.answerTally = answerTally;
 }
 
 var wordArray = ["elf", "dwarves", "giant", "bright", "myth", "light", "darkest", "dragon", "earth", "epicodus"];
-
+var alreadyGuessed = [];
 Game.prototype.selectWord = function(wordArray) {
   var word = wordArray[Math.floor(Math.random() * wordArray.length)];
   return word;
@@ -31,29 +32,30 @@ String.prototype.replaceAt=function(index, replacement) {
 Game.prototype.takeAGuess = function(guess, answer) {
   var result = answer.includes(guess);
   if (result === true) {
+    this.answerTally += 1;
   } else {
     this.guessesLeft -= 1;
+    alreadyGuessed.push(guess + ", ");
   }
   return result;
 };
 
 Game.prototype.displayResult = function(letter, array, answer, board) {
-  var changeBlankHere = [];
-  for (var i=0; i<answer.length; i++) { // for 5 times do:
-    if (i === answer.indexOf(letter)) { // if 'w' is w
-      var newDisplay = board.replaceAt(i, letter);
+  for (var i=0; i<answer.length; i++) {
+    if (i === answer.indexOf(letter)) {
+      this.correctlyGuessed.splice(i, 0, letter);
+      this.correctlyGuessed.splice(i + 1, 1);
+      console.log(this.correctlyGuessed);
+      var displayThis = this.correctlyGuessed.join(' ');
     }
   }
-  return newDisplay;
+    return displayThis;
 };
 
 Game.prototype.checkForEndGame = function(word) {
-  if (this.guessesLeft === 0) {
+  if (this.guessesLeft === 0 || this.answerTally === word.length) {
     this.winLossStatus = true;
     return true;
-  // } else if (correctlyGuessed.length === word.length) { //winning logic goes here!!!!!!!
-  //   this.winLossStatus = true;
-  //   return true;
   } else {
     return false;
   }
@@ -63,7 +65,7 @@ Game.prototype.checkForEndGame = function(word) {
 // frontend:
 $(document).ready(function() {
   player.showLives();
-  var game = new Game(10, false, []);
+  var game = new Game(10, false, [], 0);
   var answer = game.selectWord(wordArray);
   var board = game.populateBlanks(answer);
   var boardString = board.join('');
@@ -75,14 +77,14 @@ $(document).ready(function() {
     event.preventDefault();
     var letter = $("#letter").val();
     var print = game.takeAGuess(letter, answer);
-    console.log("answer array: " + answerArray);
     if (print === true) {
       printThis = game.displayResult(letter, answerArray, answer, boardString);
-      console.log(printThis);
       var printThisEdited = printThis.split('').join(' ');
-      $(".displayBoard").append(printThisEdited);
+      //$(".displayBoard").append(printThisEdited);
+      $(".displayBoard").text(game.correctlyGuessed.join(' '));
     } else {
-      $(".displayLivesLeft").append(game.guessesLeft);
+      $(".displayAlreadyGuessed").text(alreadyGuessed.join(' '));
+      $(".displayLivesLeft").text(game.guessesLeft);
     }
     //check for win/loss:
     var final = game.checkForEndGame(answer);
@@ -90,6 +92,11 @@ $(document).ready(function() {
       alert("You lost the game! Lose a life and continue");
       player.loseLife();
       player.showLives();
+      $("#alfheimNextDiv").show();
     };
+    if (final === true && game.answerTally === answer.length) {
+      alert("You win!");
+      $("#alfheimNextDiv").show();
+    }
   });
 });
