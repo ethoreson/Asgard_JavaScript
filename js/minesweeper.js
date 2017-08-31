@@ -15,6 +15,7 @@ var safeClicks = [];
 var totalLives = 5;
 
 function setup() {
+  player.showLives();
   createCanvas(401, 401);
   cols = floor(width / w);
   rows = floor(height / w);
@@ -61,8 +62,10 @@ function startOver() {
   totalLives -= 1;
   if (totalLives == 0) {
     alert("You lose a life!");
+    player.loseLife();
+    player.showLives();
   } else {
-    alert("You lost! Lives remaining:" + totalLives);
+    alert("You lost! Minesweeper lives remaining:" + totalLives);
     setup();
     safeClicks = [];
   }

@@ -9,11 +9,13 @@
     <h2>You have entered Muspelheim. Complete the Word Finder to move on to the next page.</h2>
     <div id='puzzle'></div>
     <div id='words'></div>
-
     <div id="helNextDiv">
       <a href="hel.html">Next</a>
       <h3>Password hint goes here...</h3><br><br><br>
-    </div>
+<!-- I think this is the one you want commented out:  <div id="jotunheimNextDiv">
+      <a href="passwords.html">Next</a>
+      <h3>Password hint goes here...</h3>
+    </div> -->
 
 
     <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -21,11 +23,14 @@
     <script type="text/javascript" src="../js/wordfindergame.js"></script>
     <script>
 
-      var words = [ 'midgard', 'alfheim', 'svartalfheim', 'niflheim', 'muspelheim', 'vanaheim', 'jotunheim', 'hel', 'asgard'];
-      // var words = [ 'midgard' ];
+      // var words = [ 'svartalfheim', 'niflheim', 'muspelheim'];
+
+      // var words = [ 'midgard', 'alfheim', 'svartalfheim', 'niflheim', 'muspelheim', 'vanaheim', 'jotunheim', 'hel', 'asgard'];
+
+      var words = [ 'midgard' ];
+
       var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
       wordfind.print(puzzle);
-
 
     </script>
   </div>
