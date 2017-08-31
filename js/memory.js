@@ -42,6 +42,8 @@ function memoryFlipTile(tile,val){
         // Check to see if the whole board is cleared
         if(tiles_flipped == memory_array.length){
           alert("You win!");
+          $("#vanaheimNextDiv").show();
+
           //ADD LINK HERE
 
 
