@@ -11,21 +11,20 @@
     <title>Journey to Asgard</title>
   </head>
   <body>
-
     <div class ="container">
+      <header>
+        <ul class="navbar nav-bar">
+            <li>Level: 4</li>
+            <li>Lives:<div class="fourlives"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"></div>
+            <div class="threelives"><img src="../img/greenheart.png"><img src="../img/greenheart.png"><img src="../img/greenheart.png"></div>
+            <div class="twolives"><img src="../img/yellowheart.png"><img src="../img/yellowheart.png"></div>
+            <div class="oneLife"><img src="../img/redheart.png"></div></li>
+        </ul>
+      </header>
     <h1>You're on Muspelheim, where everything's on fire. Below are nine cubes, you need 3 in a line. Back on Midgard, you might know it better as tic-tac-toe…</h1>
+      <h1>Tic Tac Toe</h1>
   <div class="tic-tac-toe">
 
-    <header>
-      <ul class="navbar nav-bar">
-          <li>Level: 4</li>
-          <li>Lives:<div class="fourlives"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"><img src="../img/blueheart.png"></div>
-          <div class="threelives"><img src="../img/greenheart.png"><img src="../img/greenheart.png"><img src="../img/greenheart.png"></div>
-          <div class="twolives"><img src="../img/yellowheart.png"><img src="../img/yellowheart.png"></div>
-          <div class="oneLife"><img src="../img/redheart.png"></div></li>
-      </ul>
-    </header>
-    <h1>You're on Muspelheim, where everything's on fire. Below are nine cubes, you need 3 in a line. Back on Midgard, you might know it better as tic-tac-toe…</h1>
     <style>
       body { font-family: arial; font-size: 1.2em; background-color:#f7f7f7;}
       #board {
@@ -205,7 +204,7 @@
       // finish the game
       function finish(p, highlight) {
         if (typeof p != 'undefined') {
-          $("#status").text(p + ' is the winner!');
+          $("#status").text(' You are the winner!');
         }
         else {
           $("#status").text('The game ended with a draw.');
@@ -219,7 +218,6 @@
         $("#xwins").text(xwins);
         $("#owins").text(owins);
         if (p=='X') {
-          alert("You won");
           $("#muspelheimNextDiv").show();
         }
         if (p!='X') {
@@ -264,7 +262,7 @@
     </script>
   </head>
   <body>
-  <h1>Tic Tac Toe</h1>
+
 
   <div id="board">
     <div id="s00"></div>
@@ -278,18 +276,11 @@
     <div id="s22"></div>
   </div>
   <p id="status"></p>
-  <p>X wins: <span id="xwins">0</span><br/>
-  O wins: <span id="owins">0</span></p>
 
 <br>
-  <div id="xONextDiv">
+  <div id="muspelheimNextDiv">
     <h2>In this this fiery realm the inhabitants, referred to as Eldthursar, were fire <strong>GIANTS</strong>.</h2>
     <a href="muspelheim.html">Next</a>
   </div>
-
-
-<!-- Commenting these out: They cannot both work at the same time, not sure which one is correct link:
-  <div id="muspelheimNextDiv"><a href="muspelheim.html">Next</a></div>
-  <div id="muspelheimNextDiv"><a href="wordfinder.html">Next</a></div> -->
   </body>
 </html>
