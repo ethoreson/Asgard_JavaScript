@@ -28,7 +28,7 @@ String.prototype.replaceAt=function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
 }
 
-Game.prototype.takeAGuess = function(guess, answer) {
+Game.prototype.takeAGuess = function(guess, answer) { //returns t/f
   var result = answer.includes(guess);
   if (result === true) {
   } else {
@@ -38,13 +38,15 @@ Game.prototype.takeAGuess = function(guess, answer) {
 };
 
 Game.prototype.displayResult = function(letter, array, answer, board) {
-  var changeBlankHere = [];
-  for (var i=0; i<answer.length; i++) { // for 5 times do:
-    if (i === answer.indexOf(letter)) { // if 'w' is w
-      var newDisplay = board.replaceAt(i, letter);
+  for (var i=0; i<answer.length; i++) {
+    if (i === answer.indexOf(letter)) {
+      this.correctlyGuessed.splice(i, 0, letter);
+      this.correctlyGuessed.splice(-1, 1);
+      console.log(this.correctlyGuessed);
+      var displayThis = this.correctlyGuessed.join(' ');
     }
   }
-  return newDisplay;
+    return displayThis;
 };
 
 Game.prototype.checkForEndGame = function(word) {
@@ -75,12 +77,11 @@ $(document).ready(function() {
     event.preventDefault();
     var letter = $("#letter").val();
     var print = game.takeAGuess(letter, answer);
-    console.log("answer array: " + answerArray);
     if (print === true) {
       printThis = game.displayResult(letter, answerArray, answer, boardString);
-      console.log(printThis);
       var printThisEdited = printThis.split('').join(' ');
-      $(".displayBoard").append(printThisEdited);
+      //$(".displayBoard").append(printThisEdited);
+      $(".displayBoard").text(game.correctlyGuessed.join(' '));
     } else {
       $(".displayLivesLeft").append(game.guessesLeft);
     }
