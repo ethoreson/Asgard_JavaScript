@@ -1,8 +1,9 @@
 //backend:
-function Game(guessesLeft, winLossStatus, correctlyGuessed) {
+function Game(guessesLeft, winLossStatus, correctlyGuessed, answerTally) {
   this.guessesLeft = guessesLeft;
   this.winLossStatus = winLossStatus;
   this.correctlyGuessed = correctlyGuessed;
+  this.answerTally = answerTally;
 }
 
 var wordArray = ["elf", "dwarves", "giant", "bright", "myth", "light", "darkest", "dragon", "earth", "epicodus"];
@@ -28,9 +29,10 @@ String.prototype.replaceAt=function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
 }
 
-Game.prototype.takeAGuess = function(guess, answer) { //returns t/f
+Game.prototype.takeAGuess = function(guess, answer) {
   var result = answer.includes(guess);
   if (result === true) {
+    this.answerTally += 1;
   } else {
     this.guessesLeft -= 1;
     alreadyGuessed.push(guess + ", ");
@@ -51,12 +53,9 @@ Game.prototype.displayResult = function(letter, array, answer, board) {
 };
 
 Game.prototype.checkForEndGame = function(word) {
-  if (this.guessesLeft === 0) {
+  if (this.guessesLeft === 0 || this.answerTally === word.length) {
     this.winLossStatus = true;
     return true;
-  // } else if (correctlyGuessed.length === word.length) { //winning logic goes here!!!!!!!
-  //   this.winLossStatus = true;
-  //   return true;
   } else {
     return false;
   }
@@ -66,7 +65,7 @@ Game.prototype.checkForEndGame = function(word) {
 // frontend:
 $(document).ready(function() {
   player.showLives();
-  var game = new Game(10, false, []);
+  var game = new Game(10, false, [], 0);
   var answer = game.selectWord(wordArray);
   var board = game.populateBlanks(answer);
   var boardString = board.join('');
@@ -94,5 +93,9 @@ $(document).ready(function() {
       player.loseLife();
       player.showLives();
     };
+    if (final === true && game.answerTally === answer.length) {
+      alert("You win!");
+      $("#alfheimNextDiv").show();
+    }
   });
 });
