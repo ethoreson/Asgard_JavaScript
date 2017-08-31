@@ -9,8 +9,8 @@ body {
 #memory_board{
 	background: rgba(218, 247, 166, 0.80);
 	border: black 1px solid;
-	width:915px;
-	height:340px;
+	width:1110px;
+	height:440px;
 	padding:24px;
 	margin:0px auto;
 }
@@ -19,12 +19,12 @@ body {
 #memory_board > div{
 	background: #ffffff;
 	border:#000 1px solid;
-	width:90px;
-	height:40px;
+	width:155px;
+	height:110px;
 	float:left;
 	margin:10px;
 	padding:20px;
-	font-size:20px;
+	font-size:22px;
 	cursor:pointer;
 	text-align:center;
 }

@@ -4,7 +4,7 @@
 
 
 body {
-  background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
+  background-image: url("https://media.giphy.com/media/3ohhwhUwyOA2QgI3Cw/giphy.gif");
   background-repeat: none;
   background-position: center;
   background-size: cover;
@@ -24,11 +24,20 @@ body {
 
 h1 {
   font-size: 80px;
+
 }
 
 .tic-tac-toe {
-  margin-left: 950px;
+  margin-left: 400px;
   margin-right: 100px;
+}
+#xwins {
+  margin-left: 500px;
+
+}
+#owins {
+  margin-left: 500px;
+
 }
 
 
@@ -51,4 +60,4 @@ h1 {
   display: block;
 }
 .winner { background-color: lightgreen; }
-#status { font-size: 1.2em; font-weight: bold; }
+#status { font-size: 1.2em; font-weight: bold; margin-left: -300px; }
