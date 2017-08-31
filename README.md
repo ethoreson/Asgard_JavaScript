@@ -1,11 +1,5 @@
 # Journey to Asgard Loose Plan:
 
-## Setup Instructions
-
-* brew install node
-* npm install -g bower
-* brew install watchman
-
 
 ### Storyline
 "You’re a young, capable human trying to become a God. You must make it through the 9 worlds to attain your God status in Asgard. Each world will pose a unique threat. The creatures of each world have lessons to teach you. Be careful, you’re not immortal yet; your lives are listed in the corner."
@@ -49,4 +43,5 @@ You’ve done it! You’re certified immortal. The elves, the dwarves, giants an
 ## Stretch Goal
 Start timer at beginning of game (can remain hidden). When player reaches Asgard, total time is displayed, and user can enter their name, what they’re the God/dess of, saves to database. Display Top 10 finishers.
 
-GIF: https://giphy.com/gifs/3oKGzobrkE3FQxAG8U/download
+GIF: https://giphy.com/gifs/3ohhwhUwyOA2QgI3Cw/download
+maybe right gif: https://media.giphy.com/media/3ohhwhUwyOA2QgI3Cw/giphy.gif
