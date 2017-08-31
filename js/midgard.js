@@ -6,7 +6,7 @@ function Game(guessesLeft, winLossStatus, correctlyGuessed) {
 }
 
 var wordArray = ["elf", "dwarves", "giant", "bright", "myth", "light", "darkest", "dragon", "earth", "epicodus"];
-
+var alreadyGuessed = [];
 Game.prototype.selectWord = function(wordArray) {
   var word = wordArray[Math.floor(Math.random() * wordArray.length)];
   return word;
@@ -33,6 +33,7 @@ Game.prototype.takeAGuess = function(guess, answer) { //returns t/f
   if (result === true) {
   } else {
     this.guessesLeft -= 1;
+    alreadyGuessed.push(guess + ", ");
   }
   return result;
 };
@@ -41,7 +42,7 @@ Game.prototype.displayResult = function(letter, array, answer, board) {
   for (var i=0; i<answer.length; i++) {
     if (i === answer.indexOf(letter)) {
       this.correctlyGuessed.splice(i, 0, letter);
-      this.correctlyGuessed.splice(-1, 1);
+      this.correctlyGuessed.splice(i + 1, 1);
       console.log(this.correctlyGuessed);
       var displayThis = this.correctlyGuessed.join(' ');
     }
@@ -83,7 +84,8 @@ $(document).ready(function() {
       //$(".displayBoard").append(printThisEdited);
       $(".displayBoard").text(game.correctlyGuessed.join(' '));
     } else {
-      $(".displayLivesLeft").append(game.guessesLeft);
+      $(".displayAlreadyGuessed").text(alreadyGuessed.join(' '));
+      $(".displayLivesLeft").text(game.guessesLeft);
     }
     //check for win/loss:
     var final = game.checkForEndGame(answer);
