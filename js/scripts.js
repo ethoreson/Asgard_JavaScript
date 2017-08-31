@@ -27,7 +27,7 @@ Player.prototype.showLives = function() {
   }
 }
 
-var player = new Player("godName", 3, 0);
+var player = new Player("godName", 4, 0);
 
 
 

@@ -20,8 +20,87 @@
           <div class="oneLife"><img src="../img/redheart.png"></div></li>
       </ul>
     </header>
-    <h1>Passwords</h1>
-    <div id="jotunheimNextDiv"><a href="jotunheim.html">Next</a></div>
+    <div class="jumbotron">
+      <div class='epicodus'><img src=../img/norse-flag.png alt="Norse Flag" style="height:78px;"></div>
+      <h1>Welcome to Jotunheim</h1>
+      <h2>Land of the Giants</h2>
+    </div>
+    <div class='quiz' id="inputs">
+      <form id="form1">
+        <h2>Passwords</h2>
+        <h4>Select the 5 passwords given from the previous worlds:</h4>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="visible">
+            Visible
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="tolkien">
+            Tolkien
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="underground">
+            Underground
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="frozen">
+            Frozen
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="giants">
+            Giants
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="wrong1">
+            Wrong
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="wrong2">
+            Wrong
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="password" value="wrong3">
+            Wrong
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+
+    <div id="output">
+      <div class='quiz'>
+        <div class="quiz-header-text">
+          <h3>Password Results</h3>
+          <a href="hel.html">Next</a>
+        </div>
+
+        <div id="quiz-result"></div>
+      </div>
+    </div>
+
+    <div class="thank-you" id="center-position">
+      <blockquote class="bg-info">
+        <p>Next Level: Minesweeper</p>
+
+        <footer>
+        </footer>
+
+      </blockquote>
+    </div>
   </div>
-  </body>
-</html>
+</body>
