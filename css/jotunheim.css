@@ -1,4 +1,98 @@
-#helNextDiv {
-  font-size: 100px;
+#output {
   display: none;
+  text-align: center;
+}
+
+body {
+  background-color: green;
+  /*background-image: url("../img/program.jpg");*/
+  background-repeat:repeat-x;
+  font-family: sans-serif;
+}
+
+.jumbotron {
+  text-align: center;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #AED6F1;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#info {
+  padding: 10px;
+}
+
+#quiz {
+  padding: 10px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.quiz-header-text {
+  text-align: center;
+}
+
+.quiz {
+  background: #E6EAE8;
+  padding: 10px;
+  margin: auto;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+
+.thank-you {
+  text-align: center;
+}
+
+.thank-you img {
+  float:right;
+}
+
+.thank-you blockquote {
+  margin: 0;
+}
+
+.jumbotron {
+  margin-top: 20px;
+
+}
+
+.jumbotron .passwords {
+  float: right;
+}
+
+.passwords {
+  padding: 10px;
+  margin: auto;
+  max-width: 200px;
+  text-align: center;
+}
+
+body {
+  background-image: url("https://media.giphy.com/media/3oKGzobrkE3FQxAG8U/giphy.gif");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  background-size: 100%;
+  text-align: center;
+  font-family: 'Sans-Serif';
+  margin-top: 100px;
+}
+
+.container {
+  margin-left: 600px;
+  margin-right: 100px;
+  background-color: white;
+  color: #1B4F72;
+  background-size: 80%;
+}
+
+h1 {
+  font-size: 80px;
 }
