@@ -45,3 +45,10 @@ Start timer at beginning of game (can remain hidden). When player reaches Asgard
 
 GIF: https://giphy.com/gifs/3ohhwhUwyOA2QgI3Cw/download
 maybe right gif: https://media.giphy.com/media/3ohhwhUwyOA2QgI3Cw/giphy.gif
+
+## Blendoku Reference
+Clone Asgard-Angular repository from GitHub:
+* Link to gh-pages Asgard_JavaScript https://ethoreson.github.io/Asgard_JavaScript/html/index.html
+* Link to Blendoku from alfheim.html https://asgard-new2.firebaseapp.com/
+* Link to firebase app asgard-angular (deployed) Next link from blendoku link to Blendoku from Asgard_JavaScript https://ethoreson.github.io/Asgard_JavaScript/html/niflheim.html
+
