@@ -61,9 +61,10 @@ function gameLost() {
 function startOver() {
   totalLives -= 1;
   if (totalLives == 0) {
-    alert("You lose a life!");
+    alert("You lose a life! Continue on your journey");
     player.loseLife();
     player.showLives();
+    $("#helNextDiv").show();
   } else {
     alert("You lost! Minesweeper lives remaining:" + totalLives);
     setup();
